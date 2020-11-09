@@ -4,6 +4,5 @@ script:
   - ./mvnw clean install
 
 after_success:
-  - mvn coveralls:report
   - mvn clean cobertura:cobertura coveralls:report
   - mvn clean test jacoco:report coveralls:report
