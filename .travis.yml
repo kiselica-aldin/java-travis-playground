@@ -4,4 +4,4 @@ script:
   - ./mvnw clean install
 
 after_success:
-  - mvn checkstyle:checkstyle-aggregate
+  - mvn site
