@@ -3,13 +3,12 @@ language: java
 addons:
   sonarcloud:
     organization: "kiselica-aldin" # the key of the org you chose at step #3
-    token: "ZjMzYTJlNGZmOTYzNmU5ZDkxMGFhNzJkOTExYjhiYWM4NjhlNDc0NA==" # encrypted value of your token
 
 script:
   - ./mvnw clean install
 
 after_success:
-  - sonar-scanner -X
+  - mvn sonar:sonar
 
 cache:
   directories:
