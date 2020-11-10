@@ -8,23 +8,27 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 @SpringBootTest
 class SimpleCalculatorTest {
     @Test
-    public void testAdd() {
+    void testAdd() {
         SimpleCalculator calc = new SimpleCalculator();
-        assertEquals(calc.add(1, 1), 2);
+        int calculation = calc.add(1, 1);
+        assertEquals(2, calculation);
     }
     @Test
-    public void testSub() {
+    void testSub() {
         SimpleCalculator calc = new SimpleCalculator();
-        assertEquals(calc.sub(1, 1), 0);
+        int calculation = calc.sub(1, 1);
+        assertEquals( 0, calculation);
     }
     @Test
-    public void testMul() {
+    void testMul() {
         SimpleCalculator calc = new SimpleCalculator();
-        assertEquals(calc.mul(3, 5), 15);
+        int calculation = calc.mul(3, 5);
+        assertEquals(15, calculation);
     }
     @Test
-    public void testDiv() {
+    void testDiv() {
         SimpleCalculator calc = new SimpleCalculator();
-        assertEquals(calc.div(8, 2), 4);
+        int calculation = calc.div(8, 2);
+        assertEquals(4, calculation);
     }
 }
