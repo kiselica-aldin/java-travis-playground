@@ -9,7 +9,7 @@ script:
   - ./mvnw clean install
 
 after_success:
-  - sonar-scanner
+  - sonar-scanner -X
 
 cache:
   directories:
