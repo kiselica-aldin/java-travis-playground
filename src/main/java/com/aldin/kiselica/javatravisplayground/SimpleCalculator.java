@@ -1,8 +1,10 @@
 package com.aldin.kiselica.javatravisplayground;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+@Slf4j
 @SpringBootApplication
 public class SimpleCalculator {
 
@@ -21,7 +23,12 @@ public class SimpleCalculator {
 
     public static void main(String[] args) {
         SpringApplication.run(SimpleCalculator.class, args);
-        System.out.println("Hello world?");
-    }
+        log.info("Hello world!");
 
+        SimpleCalculator simpleCalculator = new SimpleCalculator();
+        log.info(String.valueOf(simpleCalculator.add(1,1)));
+        log.info(String.valueOf(simpleCalculator.sub(1,1)));
+        log.info(String.valueOf(simpleCalculator.mul(4,5)));
+        log.info(String.valueOf(simpleCalculator.div(10,5)));
+    }
 }
