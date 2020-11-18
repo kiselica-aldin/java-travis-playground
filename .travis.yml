@@ -7,6 +7,9 @@ addons:
 script:
   - mvn clean verify sonar:sonar
 
+after_success:
+  - mvn clean test jacoco:report cobertura:cobertura coveralls:report
+
 cache:
   directories:
   - "$HOME/.sonar/cache"
