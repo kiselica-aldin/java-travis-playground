@@ -19,7 +19,7 @@
         <jacoco.version>0.8.3</jacoco.version>
         <sonar.java.coveragePlugin>jacoco</sonar.java.coveragePlugin>
         <sonar.dynamicAnalysis>reuseReports</sonar.dynamicAnalysis>
-        <sonar.coverage.jacoco.xmlReportPaths>/home/travis/build/kiselica-aldin/java-travis-playground/target/jacoco.xml</sonar.coverage.jacoco.xmlReportPaths>
+        <sonar.coverage.jacoco.xmlReportPaths>${project.basedir}/target/site/jacoco.xml</sonar.coverage.jacoco.xmlReportPaths>
         <sonar.language>java</sonar.language>
     </properties>
 
@@ -70,8 +70,8 @@
                 <artifactId>jacoco-maven-plugin</artifactId>
                 <version>${jacoco.version}</version>
                 <configuration>
-                    <destFile>${basedir}/target/jacoco.exec</destFile>
-                    <dataFile>${basedir}/target/jacoco.exec</dataFile>
+                    <destFile>${basedir}/target/site/jacoco.exec</destFile>
+                    <dataFile>${basedir}/target/site/jacoco.exec</dataFile>
                 </configuration>
                 <executions>
                     <execution>
@@ -91,10 +91,10 @@
             </plugin>
 
             <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
+                <version>${maven-surefire-plugin.version}</version>
                 <configuration>
-                    <forkCount>0</forkCount>
+                    <argLine>-Xmx4096m -XX:MaxPermSize=512M</argLine>
                 </configuration>
             </plugin>
         </plugins>
