@@ -93,9 +93,13 @@
             <plugin>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>${maven-surefire-plugin.version}</version>
-                <configuration>
-                    <argLine>-Xmx4096m -XX:MaxPermSize=512M</argLine>
-                </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.ow2.asm</groupId>
+                        <artifactId>asm</artifactId>
+                        <version>9.0</version>
+                    </dependency>
+                </dependencies>
             </plugin>
         </plugins>
     </build>
