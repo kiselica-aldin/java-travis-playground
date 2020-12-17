@@ -21,3 +21,6 @@ Travis CI
 Test Coverage @ Coveralls
 
 [![Coverage Status](https://coveralls.io/repos/github/kiselica-aldin/java-travis-playground/badge.svg?branch=main)](https://coveralls.io/github/kiselica-aldin/java-travis-playground?branch=main)
+
+IGNORE THIS LINE
+> Blob test
